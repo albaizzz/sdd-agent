@@ -101,6 +101,67 @@ Review draft spec ini dan tunjukkan gap-nya: <path>
 
 Kalau agent salah menolak/menyetujui spec, kamu bisa **appeal** dengan alasan tertulis — manusia yang override.
 
+## Panduan: Menulis Spec dengan `spec-writer`
+
+Skill `spec-writer` memandu kamu menulis spec 13 poin section demi section. Skill ini tidak menulis spec untukmu dan tidak menyetujui spec. Hasilnya adalah draft `docs/specs/<ticket-id>.md` yang siap direview oleh `sdd`.
+
+### Urutan kerja
+
+```
+spec-writer (draft) → sdd review (Socratic) → approval manusia → sdd task breakdown → implementasi
+```
+
+### Contoh: endpoint `GET /orders/:id/status`
+
+**1. Panggil skill**
+
+```text
+Tulis spec: tambah endpoint GET /orders/:id/status yang mengembalikan status order.
+Ticket: ORD-142 | Type: feature | Priority: P1, deadline 30 Nov
+Area: order_service.go, routes.go
+```
+
+**2. Skill membuat scaffold dan bertanya per section**
+
+Skill membuat `docs/specs/ORD-142.md` dengan status `Draft`, lalu bertanya section 1: masalah, pengguna terdampak, dan biayanya.
+
+**3. Jawab dengan angka**
+
+```text
+Customer sering menelepon CS hanya untuk menanyakan status order.
+Sekitar 800 panggilan per minggu, rata-rata 4 menit.
+```
+
+Skill menulis jawabanmu sebagai `FR-01` dan lanjut ke section 2.
+
+**4. Jawaban kabur akan ditanya ulang**
+
+```text
+Section 5 — "Endpoint harus cepat" belum bisa diuji.
+Berapa p95 yang diterima? Setelah kamu beri angka, skill menulisnya sebagai NFR-01.
+```
+
+**5. Selesai**
+
+Skill menandai placeholder yang belum terisi sebagai `TBD` dengan owner, lalu mengisi Open Questions dan Assumptions. Setelah itu jalankan review:
+
+```text
+Review draft spec ini: docs/specs/ORD-142.md
+```
+
+### Aturan yang perlu diingat
+- Ticket ID diberikan oleh kamu. Skill tidak membuatnya.
+- Setiap `FR` harus punya minimal satu `AC`. Setiap `AC` harus punya tes di section 9.
+- Kata seperti "cepat", "aman", dan "fleksibel" tanpa angka akan ditandai.
+- Maksimal 2 pertanyaan lanjutan per section. Setelah itu skill menandai `assumed — verify`.
+- Status tetap `Draft` sampai human approver menyetujui.
+
+### Lokasi skill
+- `.opencode/skills/spec-writer/` (opencode)
+- `.claude/skills/spec-writer/` (Claude Code)
+
+Template ada di `templates/SPEC.md` di masing-masing folder.
+
 ## 13 Poin Spec
 
 1. Business Requirement — kenapa fitur ini dibuat
