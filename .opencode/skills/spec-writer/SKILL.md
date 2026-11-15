@@ -16,6 +16,10 @@ Help a human author write a specification that is precise, testable, and traceab
 ## When to Run
 - Before `sdd` Phase 2 when no draft exists, or when the draft fails the quality bar below.
 - Before `sdd` Phase 3 review, to reduce Socratic rounds.
+## Step 0 — Gate Check (prerequisite)
+Run the Foundation Check from `foundation-gate` (`.opencode/skills/foundation-gate/SKILL.md`, Step 1 and Step 2).
+- **PASS** → continue to Step 1.
+- **BLOCK** → stop. Do not scaffold or write any spec. Say: *"Spec writing is blocked. Run `foundation-gate` first."* Then list the missing or empty files from the status table.
 
 ## Step 1 — Intake
 Ask for, in one form:
