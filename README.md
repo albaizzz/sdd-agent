@@ -39,6 +39,7 @@ sdd-agent/
 ├── CLAUDE.md                       # entry point Claude Code (rules SDD)
 ├── .github/copilot-instructions.md # entry point GitHub Copilot (rules SDD)
 ├── specs.md                        # referensi detail proses SDD (13 poin, fase A/B)
+├── install.sh                      # installer one-liner (curl dari GitHub, tanpa clone)
 └── install-foundation.sh           # installer ke repo target
 ```
 
@@ -58,6 +59,14 @@ Aturan SDD selalu dibawa di `AGENTS.md` saat dokumen foundation dibuat — itu y
 ## Cara Pakai
 
 ### 1. Install skill ke repo target
+
+Tanpa clone repo (langsung dari GitHub):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/albaizzz/sdd-agent/main/install.sh | bash -s -- /path/to/your/repo
+```
+
+Atau dari repo yang sudah di-clone:
 
 ```bash
 ./install-foundation.sh /path/to/your/repo
