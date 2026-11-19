@@ -76,6 +76,20 @@ Ini menyalin skill (`.opencode/skills/sdd/` + `.claude/skills/sdd/`) dan entry-p
 
 > Catatan: Jika target sudah punya `AGENTS.md`/`CLAUDE.md` tapi tanpa aturan SDD, file lama di-overwrite — cek diff `git log` setelah install. Foundation docs (PRD/DESIGN_SYSTEM/ARCHITECTURE) tidak ikut disalin — skill membuatnya via wawancara.
 
+### 1b. Install sebagai plugin GitHub Copilot CLI
+
+```bash
+copilot plugin install albaizzz/sdd-agent
+```
+
+Plugin memuat skill `sdd` dan `foundation-gate` (lihat `.claude-plugin/` dan `skills/`). Untuk mencoba dari folder lokal tanpa install:
+
+```bash
+copilot --plugin-dir /path/to/sdd-agent
+```
+
+> Catatan: `skills/` adalah salinan dari `.claude/skills/`. Jika mengubah salah satu, ubah juga yang lain.
+
 ### 2. Mulai fitur baru
 
 **opencode / Claude Code** — buka di repo target (skill sudah ter-load otomatis), lalu minta seperti ini:

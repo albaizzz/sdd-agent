@@ -1,0 +1,9 @@
+{
+  "name": "sdd",
+  "version": "1.0.0",
+  "description": "Specification-Driven Development: foundation gate, 13-point spec, devil's-advocate review, human approval gate, task breakdown, and verification. No code before an approved spec.",
+  "author": {
+    "name": "albaizzz",
+    "url": "https://github.com/albaizzz"
+  }
+}

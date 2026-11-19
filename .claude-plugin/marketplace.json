@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sdd-agent",
+  "description": "Specification-Driven Development skills for AI coding agents.",
+  "owner": {
+    "name": "albaizzz",
+    "url": "https://github.com/albaizzz"
+  },
+  "plugins": [
+    {
+      "name": "sdd",
+      "description": "No code before an approved spec: foundation gate, 13-point spec, review, task breakdown, verification.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
